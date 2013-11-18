@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- key=AIzaSyAAf9yZithZNdfR_LY1C8sdOVT6eWKGJyk&sensor=true
+
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<html>
+	<head>
+		
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>Google Map Region 5</title>
+	<style>
+		html, body, #map-canvas {
+			height: 90%;
+			margin: 0px;
+			padding: 0px
+		}
+	</style>
+	
+		
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAf9yZithZNdfR_LY1C8sdOVT6eWKGJyk&sensor=true" type="text/javascript"></script>
+
+	<script>
+		function initialize() {
+
+			// Center of Map
+			var mapOptions = {
+				zoom : 16,
+				center : new google.maps.LatLng(30.085422, -94.097176),
+				mapTypeId : google.maps.MapTypeId.ROADMAP
+			};
+
+			var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+			var myLatlng = new google.maps.LatLng(30.085422, -94.097176);
+			var marker = new google.maps.Marker({
+				position : myLatlng,
+				map : map,
+				title : 'Hello World!'
+			});
+			
+			// To add the marker to the map, call setMap();
+			marker.setMap(map);
+
+			   
+           var jq = jQuery.noConflict();
+             jq(function() { 
+                jq("#map").goMap(); 
+            });
+       
+			
+		}
+
+
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+	</script>
+	</head>
+	<body>
+		<!-- <div data-role="page"> -->
+
+			<!-- Header -->
+			
+			<!-- 
+				
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<a data-role="button" href="index.html" data-direction="reverse" class="ui-btn-left" data-transition="slide">Back</a>
+
+				<h3>Region 5</h3> 
+				
+				 -->
+				
+				<!-- Header -->
+				
+				
+	<!-- 	</div> -->
+
+				<div id="map-canvas">
+					
+				</div>
+			
+			<!-- /navbar -->
+			<div data-role="footer"  data-theme="b" data-id="foo1" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="index.html" data-transition="slide">Home</a>
+						</li>
+						<li>
+							<a href="about.html" data-transition="slide">About</a>
+						</li>
+						<li>
+							<a href="vendors.html" data-transition="slide">Presentors</a>
+						</li>
+						<li>
+							<a href="help.html" data-transition="slide">Help #s</a>
+						</li>
+					</ul>
+				</div>
+				<!-- /navbar -->
+				
+			</div><!-- /footer -->
+
+		</div>
+	</body>
+</html>
