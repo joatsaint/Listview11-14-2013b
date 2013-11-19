@@ -17,11 +17,13 @@ function initialize() {
 				map : map,
 				title : 'Hello World!'
 			});
+
 			
 			// To add the marker to the map, call setMap();
 			marker.setMap(map);
     
 }
+
 
 
 
@@ -34,3 +36,4 @@ $( document ).on( 'click', '#map-anchor', function(event){
   event.preventDefault();
   $.mobile.changePage( "map.html", { transition: "slide" } );
 });
+

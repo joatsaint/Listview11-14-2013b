@@ -80,7 +80,7 @@ under the License.
 					<!-- Start of Presenters Pages and Sub Pages-->
 					<!-- Start of Presenters Page 1 -->
 					<li data-icon="arrow-r">
-						<a href="#page1" data-transition="slide">Presenters</a>
+						<a href="multipage.html" rel="external" data-transition="slide">Presenters</a>
 					</li>
 
 				</ul>
@@ -104,12 +104,12 @@ under the License.
 						</li>
 
 					</ul>
-				</div><!-- End Footer Nav Bar -->
+				</div>
 
 			</div><!-- /footer -->
 		</div><!--End of Page -->
 
-		<!-- Start of page 2 -->
+		<!-- Start of page 1 -->
 		<div data-role="page" id="page1">
 
 			<div data-role="header" data-theme="b">
@@ -120,32 +120,57 @@ under the License.
 			<div data-role="content">
 				<ul data-role="listview" data-theme="a" data-inset="false" data-filter="true">
 					<li>
-				
-							<a href="discovery.html" data-transition="slide">Discovery ED</a>
-							
-					
+
+						<a href="discovery.html" data-transition="slide">Discovery ED</a>
+
+					</li>
+					<li>
+
+						<a href="#page2" data-transition="slide">Discovery ED</a>
+
 					</li>
 				</ul>
 			</div><!-- /content -->
 
-			<!-- Begin Footer Nav Bar -->
-			<div data-role="footer"  data-theme="b" data-id="foo1" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li>
-							<a href="index.html" data-transition="slide">Home</a>
-						</li>
-						<li>
-							<a href="about.html" data-transition="slide">About</a>
-						</li>
 
-						<li>
-							<a href="help.html" data-transition="slide">Help #s</a>
-						</li>
+<!--			<!-- Start of page 2 -->
+			<div data-role="page" id="page2">
 
+				<div data-role="header" data-theme="b">
+					<a data-role="button" data-theme="b" href="index.html" data-direction="reverse" class="ui-btn-left" data-transition="slide">Back</a>
+					<h1>Presenters</h1>
+				</div><!-- /header -->
+
+				<div data-role="content">
+					<ul data-role="listview" data-theme="a" data-inset="false" data-filter="true">
+						<li>
+
+							<a href="discovery.html" data-transition="slide">SubPage 2</a>
+
+						</li>
 					</ul>
-				</div><!-- End Footer Nav Bar -->
+				</div><!-- /content --> 				 -->
+				
 
-			</div>
+
+				<!-- Begin Footer Nav Bar -->
+				<div data-role="footer"  data-theme="b" data-id="foo1" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<li>
+								<a href="index.html" data-transition="slide">Home</a>
+							</li>
+							<li>
+								<a href="about.html" data-transition="slide">About</a>
+							</li>
+
+							<li>
+								<a href="help.html" data-transition="slide">Help #s</a>
+							</li>
+
+						</ul>
+					</div><!-- End Footer Nav Bar -->
+
+				</div>
 	</body>
 </html>
