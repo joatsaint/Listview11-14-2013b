@@ -19,35 +19,86 @@
 <body> 
 
 <!-- Start of first page -->
-<div data-role="page" id="foo">
+<div data-role="page" id="presenters">
 
-	<div data-role="header" data-theme="b" data-position="fixed">
+<!-- Start of first page header -->
+	<div data-role="header" data-theme="b" data-position="fixed">		
 		<a data-role="button" data-theme="b" href="index.html" data-direction="reverse" class="ui-btn-left" data-transition="slide">Back</a>
 		<h1>Presenters</h1>
-			<h1>List</h1>
 	</div><!-- /header -->
 
+<!-- Start of first page content -->
 	<div data-role="content">	
-		<p>I'm first in the source order so I'm shown as the page.</p>		
-		<p>View internal page called <a href="#bar">bar</a></p>	
+<ul data-role="listview" data-theme="a" data-inset="true" data-filter="false">
+
+					<li>
+						<a href="#p2" data-transition="slide">Sub Page 2</a>
+					</li>
+
+					<li>
+						<a href="#p3" data-transition="slide">Sub Page 3</a>
+					</li>
+
+					<li>
+						<a href="#p4" data-transition="slide">Sub Page 4</a>
+					</li>
+
+					<li>
+						<a href="#p5" data-transition="slide">Sub Page 5</a>
+					</li>
+
+					<li>
+						<a href="#p6" data-transition="slide">Sub Page 6</a>
+					</li>
+
+					<li>
+						<a href="#p7" data-transition="slide">Sub Page 7</a>
+					</li>
+
+					<li>
+						<a href="#p8" data-transition="slide">Sub Page 8</a>
+					</li>
+			</ul>
 	</div><!-- /content -->
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /header -->
-</div><!-- /page -->
+<!-- Start of first page footer -->
+	<!-- Begin Footer Nav Bar -->
+			<div data-role="footer"  data-theme="b" data-id="foo1" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="index.html" data-transition="slide">Home</a>
+						</li>
+						<li>
+							<a href="about.html" data-transition="slide">About</a>
+						</li>
+						<li>
+							<a href="multipage.html" data-transition="slide">Presentors</a>
+						</li>
+						<li>
+							<a href="help.html" data-transition="slide">Help #s</a>
+						</li>
+
+					</ul>
+				</div>
+
+			</div><!-- /footer -->
+	
+</div><!-- End of first page -->
 
 
 <!-- Start of second page -->
-<div data-role="page" id="bar">
+<div data-role="page" id="p2">
 
-	<div data-role="header">
+	<div data-role="header"  data-theme="b">
+		<a data-role="button" data-theme="b" href="multipage.html" data-direction="reverse" class="ui-btn-left" data-transition="slide">Back</a>
+		
 		<h1>Bar</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
 		<p>I'm first in the source order so I'm shown as the page.</p>		
-		<p><a href="#foo">Back to foo</a></p>	
+		<p><a href="#presenters">Back to Presenters List</a></p>	
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -65,7 +116,7 @@
 							<a href="about.html" data-transition="slide">About</a>
 						</li>
 						<li>
-							<a href="vendors.html" data-transition="slide">Presentors</a>
+							<a href="multipage.html" data-transition="slide">Presentors</a>
 						</li>
 						<li>
 							<a href="help.html" data-transition="slide">Help #s</a>
