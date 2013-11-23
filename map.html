@@ -4,55 +4,52 @@
         <title>jQuery mobile with Google maps geo directions example</title>
         	<style>
 		html, body, #map-canvas {
-			height: 90%;
+			height: 100%;
 			margin: 0px;
 			padding: 0px
 		}
 	</style>
-         <!--
+
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
-        -->
-
-        
+        <script src="./maps.js"></script>
     </head>
     <body>
         <!-- /page -->
         <div data-role="page" id="map-page">
             <!-- /header -->
+           
             <div data-role="header" data-theme="b">
                 <h1>Map</h1>
                 <a data-theme="b" data-rel="back">Back</a>
             </div>
             <!-- /content -->
             <div data-role="content" class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
-                <div id="map_canvas" style="height:550px;"></div>
+                <div id="map_canvas" style="height:800px;"></div>
             </div>
             
-            
-            <!-- /Footer navbar -->
-            <div data-role="footer"  data-theme="b" data-id="foo1" data-position="fixed">
+        
+<!-- Begin Footer Nav Bar -->
+			<div data-role="footer"  data-theme="b" data-id="foo1" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a href="index.html" data-transition="slide">Home</a>
+							<a href="index.html" data-transition="slide">Home<br>Page</a>
 						</li>
 						<li>
-							<a href="about.html" data-transition="slide">About</a>
+							<a href="about.html" data-transition="slide">About<br>2014 Fair</a>
 						</li>
 						<li>
-							<a href="vendors.html" data-transition="slide">Presentors</a>
+							<a href="restrooms.html" data-transition="slide">Rest<br>Rooms</a>
 						</li>
 						<li>
-							<a href="help.html" data-transition="slide">Help #s</a>
+							<a href="help.html" data-transition="slide">Help<br>#s</a>
 						</li>
 					</ul>
-				</div><!-- /Footer navbar -->
-			</div><!-- /footer -->
+				</div>
 
-		</div>
-            
-        </div>
+			</div><!-- /footer -->
+		</div><!--End of Page -->
     </body>
 </html>
