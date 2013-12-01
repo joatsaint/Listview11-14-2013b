@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  	<title>Get Driving Directions Tutorial by Michael C. Breuer</title>
+  	<meta name="description" content="">
+		<link rel="stylesheet" href="js/jquery.mobile-1.3.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/background.css" />
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/jquery.mobile-1.3.2.min.js"></script>
+		
+  	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAAf9yZithZNdfR_LY1C8sdOVT6eWKGJyk&amp;sensor=false"></script>
+  	
+  
+  	<!-- CSS -->
+	<style>
+	
+			html, body, #map-canvas {
+			height: 100%;
+			margin: 0px;
+			padding: 0px
+		}
+		* { 
+			margin: 0; 
+			padding: 0; 
+		}
+		body {
+			padding:20px;
+			font-family: helvetica, arial, sans-serif;
+		}
+		h1 {
+			color:#000;
+			font-family: 'Arial', cursive;
+			line-height: 130%;
+		}
+		#content {
+			padding:20px 0 20px 20px;
+			background: #fff;
+		}
+		#map_canvas {
+			width: 100%;
+			height: 500px;
+		}
+		#start {
+			padding: 8px;
+			width: 260px;
+			color: #000;
+		}
+		button {
+			width: 80px;
+			height: 29px;
+			border: none;
+			color: #fff;
+			cursor: pointer;
+			background: #ccc;
+		}
+		button:hover {
+			color: #000;
+			background: #eee;
+		}
+  	</style>
+  
+  	<!-- Javascript -->
+  	<script>
+  	
+  	    var directionDisplay;
+		var directionsService = new google.maps.DirectionsService();
+		var map;
+
+		function initialize() {
+			
+			directionsDisplay = new google.maps.DirectionsRenderer();
+			var headquarters = new google.maps.LatLng(30.085680, -94.097603);	
+			var myOptions = {
+				zoom:15,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				center: headquarters
+			};
+			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+			
+						// Add A Custom Marker 
+			var headquartersMarker = new google.maps.Marker({
+				position: headquarters,
+				map: map,
+				animation: google.maps.Animation.DROP,
+				zIndex:99999
+			});
+
+// Call Directions Panel			
+			directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById('directions-panel'));
+  
+ 
+  var control = document.getElementById('control');
+  control.style.display = 'block';
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+
+
+		 
+
+		 
+			directionsDisplay.setMap(map);
+		}
+
+		// Calculate the route  
+		function calcRoute() {
+			var start = document.getElementById("start").value;
+			var end = new google.maps.LatLng(30.085680, -94.097603);
+			var request = {
+				origin:start, 
+				destination:end,
+				travelMode: google.maps.DirectionsTravelMode.DRIVING
+			};
+		 
+			directionsService.route(request, function(response, status) {
+				if (status == google.maps.DirectionsStatus.OK) {
+					directionsDisplay.setDirections(response);
+				}
+			});
+		 
+			var endMarker = new google.maps.Marker({
+				position: end,
+				map: map,
+			});
+						
+						
+						
+
+		} 
+function reset() { directionsDisplay.setDirections({ routes: [] }); };		
+	
+	</script>  
+</head>
+<body onload="initialize()">
+<!-- /page -->
+        <div data-role="page" id="map-page">
+            <!-- header -->
+           
+            <div data-role="header" data-theme="b">
+                <h1>Get Driving Directions To Region 5</h1>
+                <a data-theme="b" data-rel="back">Back</a>
+            </div>
+            <!-- /header -->
+            
+         <!-- Begin Content -->   
+	<div id="content">
+		<div>
+     <h2>From:</h2>  <input type="text" name="start" id="start" placeholder="Enter Address, Postal Code, City, etc." onclick="document.getElementById(this.id).value= '';" />
+     <h2>To: Region 5 Office</h2> <!--<input type="text" id="start" value="" /> -->
+     
+     
+     <input type="button" value="Get Directions" onclick="calcRoute();"/>
+     
+     <input type="button" value="Reset" onclick="reset()"/>
+	</div>  
+	<div id="directions-panel"></div>	
+	<div id="map_canvas"></div>
+	 </div> 
+<!-- End Content -->
+
+</div><!-- End of Page -->
+</body>
+</html>
